@@ -17,3 +17,19 @@ body
     left: 0;
     outline: none;
 }
+
+#joystick-wrapper {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    width: 120px;
+    height: 120px;
+    z-index: 100;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    touch-action: none;
+}
+
+#joystick-wrapper.active {
+    opacity: 1;
+}
