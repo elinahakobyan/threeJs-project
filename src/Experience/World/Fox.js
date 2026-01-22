@@ -82,23 +82,23 @@ export default class Fox {
     }
 
     update() {
-            const deltaTime = this.time.delta * 0.001
+        const deltaTime = this.time.delta * 0.001
 
-            this.animation.mixer.update(deltaTime)
-            if (this.joyStick.moveData.active) {
-                const speed = 5
-                this.model.position.x -= this.joyStick.moveData.x * speed * deltaTime
-                this.model.position.z += this.joyStick.moveData.y * speed * deltaTime
-                const angle = Math.atan2(this.joyStick.moveData.x, this.joyStick.moveData.y)
-                this.model.rotation.y = -angle
-                if (this.animation.actions.current !== this.animation.actions.running) {
-                    this.animation.play('running')
-                }
-            } else {
-                if (this.animation.actions.current !== this.animation.actions.idle) {
-                    this.animation.play('idle')
-                }
+        this.animation.mixer.update(deltaTime)
+        if (this.joyStick.moveData.active) {
+            const speed = 5
+            this.model.position.x += this.joyStick.moveData.x * speed * deltaTime
+            this.model.position.z -= this.joyStick.moveData.y * speed * deltaTime
+            const angle = Math.atan2(this.joyStick.moveData.x, this.joyStick.moveData.y)
+            this.model.rotation.y = -angle + Math.PI
+            if (this.animation.actions.current !== this.animation.actions.running) {
+                this.animation.play('running')
             }
+        } else {
+            if (this.animation.actions.current !== this.animation.actions.idle) {
+                this.animation.play('idle')
+            }
+        }
 
     }
 }
