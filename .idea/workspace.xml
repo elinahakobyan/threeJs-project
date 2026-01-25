@@ -4,12 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f42ca34f-e805-4922-af6c-7e1f6b4ee649" name="Changes" comment="i">
+    <list default="true" id="f42ca34f-e805-4922-af6c-7e1f6b4ee649" name="Changes" comment="fixed fox movement">
+      <change afterPath="$PROJECT_DIR$/static/models/Portfolio.glb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Experience/Camera.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Experience/Camera.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Experience/Experience.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Experience/Experience.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Experience/Utils/Resources.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Experience/Utils/Resources.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Experience/World/Floor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Experience/World/Floor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Experience/World/Fox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Experience/World/Fox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Experience/sources.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Experience/sources.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +40,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/elinahakobyan/threeJs-project.git&quot;,
-    &quot;accountId&quot;: &quot;154c796e-3ce9-43de-bcd3-ffefecab0b27&quot;
+    &quot;accountId&quot;: &quot;dd11dfb2-2457-4019-8a83-d3dc4e77e11a&quot;
   }
 }</component>
   <component name="ProblemsViewState">
@@ -54,7 +59,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/user/ThreeJsBruno/threeJs-project&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/elinahakobyan/Playrix/threeJs-project&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -67,6 +72,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/models" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/vite" />
@@ -75,7 +81,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-WS-243.26574.96" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-WS-243.26053.12" />
       </set>
     </attachedChunks>
   </component>
@@ -94,8 +100,7 @@
       <workItem from="1769092073696" duration="218000" />
       <workItem from="1769092327342" duration="4989000" />
       <workItem from="1769110126764" duration="1424000" />
-      <workItem from="1769154969817" duration="564000" />
-      <workItem from="1769155549800" duration="38000" />
+      <workItem from="1769277468434" duration="398000" />
     </task>
     <servers />
   </component>

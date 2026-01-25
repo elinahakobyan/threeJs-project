@@ -1,104 +1,112 @@
-import * as THREE from 'three'
-import Experience from '../Experience.js'
+import * as THREE from "three";
+import Experience from "../Experience.js";
 
 export default class Fox {
-    constructor() {
-        this.experience = new Experience()
-        this.scene = this.experience.scene
-        this.resources = this.experience.resources
-        this.time = this.experience.time
-        this.debug = this.experience.debug
-        this.joyStick = this.experience.joyStick
+  constructor() {
+    this.experience = new Experience();
+    this.scene = this.experience.scene;
+    this.resources = this.experience.resources;
+    this.time = this.experience.time;
+    this.debug = this.experience.debug;
+    this.joyStick = this.experience.joyStick;
 
-        // Debug
-        if (this.debug.active) {
-            this.debugFolder = this.debug.ui.addFolder('fox')
-        }
-
-        // Resource
-        this.resource = this.resources.items.foxModel
-
-        this.setModel()
-        this.setAnimation()
+    // Debug
+    if (this.debug.active) {
+      this.debugFolder = this.debug.ui.addFolder("fox");
     }
 
-    setModel() {
-        this.model = this.resource.scene
-        this.model.scale.set(0.02, 0.02, 0.02)
-        this.scene.add(this.model)
+    // Resource
+    this.resource = this.resources.items.foxModel;
 
-        this.model.traverse((child) => {
-            if (child instanceof THREE.Mesh) {
-                child.castShadow = true
-            }
-        })
+    this.setModel();
+    this.setAnimation();
+  }
+
+  setModel() {
+    this.model = this.resource.scene;
+    this.model.scale.set(0.03, 0.03, 0.03);
+    this.scene.add(this.model);
+
+    this.model.traverse((child) => {
+      if (child instanceof THREE.Mesh) {
+        child.castShadow = true;
+      }
+    });
+  }
+
+  setAnimation() {
+    this.animation = {};
+
+    // Mixer
+    this.animation.mixer = new THREE.AnimationMixer(this.model);
+
+    // Actions
+    this.animation.actions = {};
+
+    this.animation.actions.idle = this.animation.mixer.clipAction(
+      this.resource.animations[0],
+    );
+    this.animation.actions.walking = this.animation.mixer.clipAction(
+      this.resource.animations[1],
+    );
+    this.animation.actions.running = this.animation.mixer.clipAction(
+      this.resource.animations[2],
+    );
+
+    this.animation.actions.current = this.animation.actions.idle;
+    this.animation.actions.current.play();
+
+    // Play the action
+    this.animation.play = (name) => {
+      const newAction = this.animation.actions[name];
+      const oldAction = this.animation.actions.current;
+
+      newAction.reset();
+      newAction.play();
+      newAction.crossFadeFrom(oldAction, 1);
+
+      this.animation.actions.current = newAction;
+    };
+
+    // Debug
+    if (this.debug.active) {
+      const debugObject = {
+        playIdle: () => {
+          this.animation.play("idle");
+        },
+        playWalking: () => {
+          this.animation.play("walking");
+        },
+        playRunning: () => {
+          this.animation.play("running");
+        },
+      };
+      this.debugFolder.add(debugObject, "playIdle");
+      this.debugFolder.add(debugObject, "playWalking");
+      this.debugFolder.add(debugObject, "playRunning");
     }
+  }
 
-    setAnimation() {
-        this.animation = {}
+  update() {
+    const deltaTime = this.time.delta * 0.001;
 
-        // Mixer
-        this.animation.mixer = new THREE.AnimationMixer(this.model)
-
-        // Actions
-        this.animation.actions = {}
-
-        this.animation.actions.idle = this.animation.mixer.clipAction(this.resource.animations[0])
-        this.animation.actions.walking = this.animation.mixer.clipAction(this.resource.animations[1])
-        this.animation.actions.running = this.animation.mixer.clipAction(this.resource.animations[2])
-
-        this.animation.actions.current = this.animation.actions.idle
-        this.animation.actions.current.play()
-
-        // Play the action
-        this.animation.play = (name) => {
-            const newAction = this.animation.actions[name]
-            const oldAction = this.animation.actions.current
-
-            newAction.reset()
-            newAction.play()
-            newAction.crossFadeFrom(oldAction, 1)
-
-            this.animation.actions.current = newAction
-        }
-
-        // Debug
-        if (this.debug.active) {
-            const debugObject = {
-                playIdle: () => {
-                    this.animation.play('idle')
-                },
-                playWalking: () => {
-                    this.animation.play('walking')
-                },
-                playRunning: () => {
-                    this.animation.play('running')
-                }
-            }
-            this.debugFolder.add(debugObject, 'playIdle')
-            this.debugFolder.add(debugObject, 'playWalking')
-            this.debugFolder.add(debugObject, 'playRunning')
-        }
+    this.animation.mixer.update(deltaTime);
+    if (this.joyStick.moveData.active) {
+      const speed = 20;
+      this.model.position.x += this.joyStick.moveData.x * speed * deltaTime;
+      this.model.position.z -= this.joyStick.moveData.y * speed * deltaTime;
+      const angle = Math.atan2(
+        this.joyStick.moveData.x,
+        this.joyStick.moveData.y,
+      );
+      this.model.rotation.y = -angle + Math.PI;
+      if (this.animation.actions.current !== this.animation.actions.running) {
+        this.animation.play("running");
+      }
+    } else {
+      if (this.animation.actions.current !== this.animation.actions.idle) {
+        this.animation.play("idle");
+      }
     }
-
-    update() {
-        const deltaTime = this.time.delta * 0.001
-
-        this.animation.mixer.update(deltaTime)
-        if (this.joyStick.moveData.active) {
-            const speed = 5
-            this.model.position.x += this.joyStick.moveData.x * speed * deltaTime
-            this.model.position.z -= this.joyStick.moveData.y * speed * deltaTime
-            const angle = Math.atan2(this.joyStick.moveData.x, this.joyStick.moveData.y)
-            this.model.rotation.y = -angle + Math.PI
-            if (this.animation.actions.current !== this.animation.actions.running) {
-                this.animation.play('running')
-            }
-        } else {
-            if (this.animation.actions.current !== this.animation.actions.idle) {
-                this.animation.play('idle')
-            }
-        }
-
-    }
+  }
 }

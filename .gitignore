@@ -4,10 +4,12 @@ Thumbs.db
 .idea/
 *.suo
 *.sublime-project
+.vscode/
 *.sublime-workspace
+*.xml
 
 # Build
-dist/
+dist
 /npm-debug.log
 node_modules/
 .vercel
