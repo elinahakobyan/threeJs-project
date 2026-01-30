@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f42ca34f-e805-4922-af6c-7e1f6b4ee649" name="Changes" comment="fixed fox movement">
-      <change afterPath="$PROJECT_DIR$/static/models/Portfolio.glb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Experience/Utils/Raycaster.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Experience/Camera.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Experience/Camera.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Experience/Experience.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Experience/Experience.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Experience/Utils/Resources.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Experience/Utils/Resources.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Experience/World/Environment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Experience/World/Environment.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Experience/World/Floor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Experience/World/Floor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Experience/World/Fox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Experience/World/Fox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Experience/sources.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Experience/sources.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Experience/World/World.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Experience/World/World.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +97,7 @@
       <workItem from="1769092327342" duration="4989000" />
       <workItem from="1769110126764" duration="1424000" />
       <workItem from="1769277468434" duration="398000" />
+      <workItem from="1769813936442" duration="524000" />
     </task>
     <servers />
   </component>
@@ -109,6 +106,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="fixed fox movement" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed fox movement" />
   </component>
 </project>

@@ -5,6 +5,7 @@ export default class Floor {
   constructor() {
     this.experience = new Experience();
     this.scene = this.experience.scene;
+    this.world = this.experience.world;
     this.resources = this.experience.resources;
     this.resource = this.resources.items.park;
 
@@ -20,9 +21,9 @@ export default class Floor {
     this.model.position.y = -10;
     this.model.position.z = 0.01;
     this.model.traverse((child) => {
-      // if (intersectObjectsNames.includes(child.name)) {
-      //   intersectObjects.push(child);
-      // }
+      if (this.world.intersectObjectsNames.includes(child.name)) {
+        this.world.intersectObjects.push(child);
+      }
       if (child.isMesh) {
         child.castShadow = true;
         child.receiveShadow = true;
