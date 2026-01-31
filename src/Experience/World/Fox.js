@@ -25,6 +25,8 @@ export default class Fox {
 
     setModel() {
         this.model = this.resource.scene;
+        const pos = this.world.floor.charcterSpawnPosition
+        this.model.position.set(pos.x, 0, pos.z);
         this.model.scale.set(0.03, 0.03, 0.03);
         this.scene.add(this.model);
         // this.model.name='fox'

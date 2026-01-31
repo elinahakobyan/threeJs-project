@@ -30,6 +30,7 @@ export default class Floor {
       }
 
       if (child.name === "Character") {
+        this.charcterSpawnPosition=child.position
         //   character.spawnPosition.copy(child.position);
         //   character.instance = child;
         //   playerCollider.start

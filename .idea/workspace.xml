@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f42ca34f-e805-4922-af6c-7e1f6b4ee649" name="Changes" comment="fixed fox movement">
-      <change afterPath="$PROJECT_DIR$/src/Experience/Utils/Raycaster.js" afterDir="false" />
+    <list default="true" id="f42ca34f-e805-4922-af6c-7e1f6b4ee649" name="Changes" comment="added raycaster">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Experience/World/Environment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Experience/World/Environment.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Experience/World/Floor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Experience/World/Floor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Experience/World/Fox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Experience/World/Fox.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Experience/World/World.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Experience/World/World.js" afterDir="false" />
@@ -97,8 +95,18 @@
       <workItem from="1769092327342" duration="4989000" />
       <workItem from="1769110126764" duration="1424000" />
       <workItem from="1769277468434" duration="398000" />
-      <workItem from="1769813936442" duration="524000" />
+      <workItem from="1769813936442" duration="659000" />
+      <workItem from="1769852421813" duration="1293000" />
     </task>
+    <task id="LOCAL-00001" summary="added raycaster">
+      <option name="closed" value="true" />
+      <created>1769815458834</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1769815458834</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,6 +115,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="fixed fox movement" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed fox movement" />
+    <MESSAGE value="added raycaster" />
+    <option name="LAST_COMMIT_MESSAGE" value="added raycaster" />
   </component>
 </project>

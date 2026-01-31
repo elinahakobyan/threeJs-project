@@ -26,7 +26,8 @@ export default class World {
             "Charmander",
             "Snorlax",
             "Chest",
-            'fox'
+            'fox',
+            'Character'
         ];
 
         // Wait for resources
