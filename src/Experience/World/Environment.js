@@ -20,7 +20,7 @@ export default class Environment {
   setSunLight() {
     this.ambientLight = new THREE.AmbientLight(0x404040, 2.7);
     this.scene.add(this.ambientLight);
-     this.sunLight = new THREE.DirectionalLight(0xffffff);
+    this.sunLight = new THREE.DirectionalLight(0xffffff);
     this.sunLight.castShadow = true;
     this.sunLight.position.set(280, 200, -80);
     this.sunLight.target.position.set(100, 0, -10);
@@ -34,11 +34,11 @@ export default class Environment {
     this.scene.add(this.sunLight.target);
     this.scene.add(this.sunLight);
 
-// const shadowCameraHelper = new THREE.CameraHelper(sun.shadow.camera);
-// scene.add(shadowCameraHelper);
+    // const shadowCameraHelper = new THREE.CameraHelper(sun.shadow.camera);
+    // scene.add(shadowCameraHelper);
 
-// const sunHelper = new THREE.CameraHelper(sun);
-// scene.add(sunHelper);
+    // const sunHelper = new THREE.CameraHelper(sun);
+    // scene.add(sunHelper);
 
     // Debug
     if (this.debug.active) {

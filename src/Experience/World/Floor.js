@@ -18,7 +18,7 @@ export default class Floor {
 
   setForest() {
     this.model = this.resource.scene;
-    this.model.position.y = -10;
+    // this.model.position.y = -10;
     this.model.position.z = 0.01;
     this.model.traverse((child) => {
       if (this.world.intersectObjectsNames.includes(child.name)) {
@@ -30,9 +30,8 @@ export default class Floor {
       }
 
       if (child.name === "Character") {
-        this.charcterSpawnPosition=child.position
-        //   character.spawnPosition.copy(child.position);
-        //   character.instance = child;
+        this.charcterSpawnPosition = child.position;
+
         //   playerCollider.start
         //     .copy(child.position)
         //     .add(new THREE.Vector3(0, CAPSULE_RADIUS, 0));
@@ -41,7 +40,7 @@ export default class Floor {
         //     .add(new THREE.Vector3(0, CAPSULE_HEIGHT, 0));
       }
       if (child.name === "Ground_Collider") {
-        // colliderOctree.fromGraphNode(child);
+        this.world.colliderOctree.fromGraphNode(child);
         child.visible = false;
       }
     });
