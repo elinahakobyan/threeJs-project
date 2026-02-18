@@ -74,7 +74,7 @@ export default class Camera {
         if (fox && fox.model) {
             const foxPosition = fox.model.position;
             const targetPosition = this.tempVector.copy(foxPosition).add(this.cameraOffset);
-            this.instance.position.lerp(targetPosition, 0.1);
+            this.instance.position.copy(targetPosition);
             this.instance.lookAt(foxPosition);
         }
 
