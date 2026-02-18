@@ -7,7 +7,7 @@ export default class Raycaster {
     this.experience = new Experience();
     this.scene = this.experience.scene;
     this.world = this.experience.world;
-    this.camera = this.experience.camera; // берем камеру из класса Camera
+    this.camera = this.experience.camera;
 
     this.instance = new THREE.Raycaster();
     this.pointer = new THREE.Vector2();

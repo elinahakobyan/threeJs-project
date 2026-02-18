@@ -10,10 +10,11 @@ export default class World {
     this.experience = new Experience();
     this.scene = this.experience.scene;
     this.resources = this.experience.resources;
-    this.colliderOctree = new Octree();
+    // this.colliderOctree = new Octree();
 
     this.intersectObject = "";
     this.intersectObjects = [];
+    this.obstacles = [];
     this.intersectObjectsNames = [
       "Project_1",
       "Project_2",

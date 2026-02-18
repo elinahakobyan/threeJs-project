@@ -102,7 +102,8 @@ export default class Environment {
         .min(0)
         .max(4)
         .step(0.001)
-        .onChange(this.environmentMap.updateMaterials);
+
+
     }
   }
 }
