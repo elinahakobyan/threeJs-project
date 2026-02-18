@@ -8,7 +8,7 @@
     "build": "vite build",
     "deploy": "vercel --prod"
   },
-  "devDependencieas": {
+  "devDependencies": {
     "vite": "^4.5.0"
   },
   "dependencies": {
