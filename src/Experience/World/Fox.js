@@ -87,7 +87,6 @@ export default class Fox {
 
     respawnCharacter() {
         const pos = this.world.floor.charcterSpawnPosition;
-        this.velocity.set(0, 0, 0); // Обнуляем скорость при респауне
         this.model.position.set(pos.x, pos.y + 0.2, pos.z - 2);
         this.model.scale.set(0.03, 0.03, 0.03);
         this.model.rotation.y = Math.PI / 2;
@@ -104,11 +103,11 @@ export default class Fox {
         if (deltaTime > 0.1) return;
 
         if (this.joyStick.moveData.active && this.world.raycaster.instance) {
-            const speed = 18;
+            const speed = 17;
             const moveDir = new THREE.Vector3(
-                this.joyStick.moveData.x,
+                this.joyStick.moveData.y,
                 0,
-                -this.joyStick.moveData.y
+                this.joyStick.moveData.x
             ).normalize();
 
             const rayOrigin = this.tempVector.copy(this.model.position).add(new THREE.Vector3(0, 0.5, 0));
@@ -118,7 +117,7 @@ export default class Fox {
                 // Collision detected!
             } else {
                 this.model.position.addScaledVector(moveDir, speed * deltaTime);
-                const angle = Math.atan2(this.joyStick.moveData.x, this.joyStick.moveData.y);
+                const angle = Math.atan2(this.joyStick.moveData.y, -this.joyStick.moveData.x);
                 this.model.rotation.y =  -angle + Math.PI;
             }
 

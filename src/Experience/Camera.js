@@ -10,6 +10,7 @@ export default class Camera {
         this.canvas = this.experience.canvas;
         this.debug = this.experience.debug;
 
+        // this.cameraOffset = new THREE.Vector3(0, 36, 0);
         this.cameraOffset = new THREE.Vector3(-30, 36, 0);
         this.tempVector = new THREE.Vector3();
         if (this.debug.active) {
